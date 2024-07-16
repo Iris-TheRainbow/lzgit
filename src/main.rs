@@ -3,10 +3,7 @@ use std::process::Command;
 
 fn main() {
     let mut args: Vec<String> = env::args().collect();
-    args.remove(0);
-    let first = args.first();
-    let mut commitmsg = String::from(first);
-    commitmsg.push_str(" ");
+    let mut commitmsg = String::new()
     args.remove(0);
     for arg in args {
         commitmsg.push_str(&arg);

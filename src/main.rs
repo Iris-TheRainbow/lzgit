@@ -4,7 +4,8 @@ use std::process::Command;
 fn main() {
     let mut args: Vec<String> = env::args().collect();
     args.remove(0);
-    let mut commitmsg: String::from(args.first());
+    let first = args.first()
+    let mut commitmsg = String::from(first);
     commitmsg.push_str(" ");
     args.remove(0);
     for arg in args {

@@ -16,6 +16,11 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build
         run: cargo build --verbose
+      - name: Upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: "lzcommit_linux"
+          path: "./target/debug/lzcommit"
 
   build-win:
     runs-on: windows-latest
@@ -23,3 +28,19 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build
         run: cargo build --verbose
+      - name: Upload DMG
+        uses: actions/upload-artifact@v4
+        with:
+          name: "lzcommit_win"
+          path: "./target/debug/lzcommit.exe"
+  build-mac:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        run: cargo build --verbose
+      - name: Upload DMG
+        uses: actions/upload-artifact@v4
+        with:
+          name: "lzcommit_mac"
+          path: "./target/debug/lzcommit"

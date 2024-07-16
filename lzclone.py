@@ -1,7 +1,8 @@
 from sys import argv
 from os import system
 
-args = argv.pop(1)
+args = argv
+args.pop(0)
 if args[0] == '--help':
     print('lzclone: cloning for lazy people. It clones then automatically changes to that directory')
 def getname(url):

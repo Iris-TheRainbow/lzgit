@@ -3,13 +3,12 @@ use std::process::Command;
 
 fn main() {
     let mut args: Vec<String> = env::args().collect();
-    let mut commitmsg = String::from("\"");
+    let mut commitmsg = String::new();
     args.remove(0);
     for arg in args {
         commitmsg.push_str(&arg);
         commitmsg.push_str(" ");
     }
-    commitmsg.push_str("\"");
     println!("{}", commitmsg);
     let out1 = Command::new("git")
         .arg("stage")

@@ -17,7 +17,6 @@ fn main() {
         .expect("unable to execute");
     let out1 = String::from_utf8(out1.stdout).unwrap();
     print!("{}", out1);
-
     let out2 = Command::new("git")
         .arg("commit")
         .arg("-m")
